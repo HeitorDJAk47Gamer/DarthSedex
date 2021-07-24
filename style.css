@@ -1,0 +1,21 @@
+html {
+  font-family: sans-serif;
+  cursor: url(img/cursor.cur), default;
+}
+
+
+body {
+  background-color: #4992e3;
+  cursor: url(img/cursor.cur), default;
+}
+
+img.oi {
+  width: 230px;
+  height: 200px;
+}
+
+a.kk {
+  display: inline;
+  text-decoration: none;
+  cursor: url(img/cursor.cur), default;
+}
