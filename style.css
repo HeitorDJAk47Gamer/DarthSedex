@@ -1,20 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  --bg-color: #121214;
+  --surface-color: #202024;
+  --text-primary: #e1e1e6;
+  --text-secondary: #a8a8b3;
+  --brand-primary: #8257e5;
+  --brand-secondary: #04d361;
+  --brand-hover: #9466ff;
+  --italia-bg: #116c31;
+  --italia-surface: #2f9837;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body {
-  font-family: sans-serif;
-  cursor: url(img/cursor.cur), default;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  cursor: url('img/cursor.cur'), default;
+  overflow-x: hidden;
 }
 
-
-body {
-  background-color: #4992e3;
+/* Typography */
+h1, h2, h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
 }
 
-img.oi {
-  width: 230px;
-  height: 200px;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
-a.kk {
-  display: inline;
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #323238;
+}
+
+.nav-link {
+  color: var(--brand-primary);
   text-decoration: none;
-  cursor: url(img/cursor.cur), default;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  cursor: url('img/cursor.cur'), pointer;
+}
+
+.nav-link:hover {
+  color: var(--brand-hover);
+}
+
+/* General Layout Utilities */
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Components */
+.card {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.img-hero {
+  max-width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(130, 87, 229, 0.2);
+  margin-bottom: 2rem;
+}
+
+.img-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.img-gallery {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.img-gallery:hover {
+  transform: scale(1.05);
+}
+
+video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+audio {
+  margin: 1.5rem 0;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Specific Page Overrides */
+
+/* Equipe */
+.equipe-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.equipe-hero h1 {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.equipe-logo {
+  max-width: 250px;
+}
+
+/* Italia */
+body.italia-theme {
+  background-color: var(--italia-bg);
+}
+
+body.italia-theme .card {
+  background-color: var(--italia-surface);
+}
+
+body.italia-theme .nav-link {
+  color: white;
+}
+
+body.italia-theme h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+body.italia-theme p {
+  color: #f0f0f0;
+}
+
+/* Colorful Italia Text */
+.text-red { color: #ff4d4d; }
+.text-green { color: #4dff4d; }
+.text-yellow { color: #ffff4d; }
+.text-purple { color: #d94dff; }
+.text-blue { color: #4d4dff; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .equipe-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
 }
